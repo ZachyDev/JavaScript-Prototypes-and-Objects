@@ -19,3 +19,9 @@ for(let item in car) {
     console.log(item)
 }
 console.log(Object.keys(car))
+
+// configurable property
+
+Object.defineProperty(car,"model",{ configurable: false});
+delete car.model;
+console.log(car.model)
