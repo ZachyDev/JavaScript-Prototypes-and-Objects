@@ -7,7 +7,15 @@ const car = {
     }
 }
 Object.defineProperty(car,"brand",{ writable: false })
-Object.freeze(car.brand)
+// Object.freeze(car.brand)
 car.brand.v1 = "isuzu" ;
 console.log(car.brand)
 console.log(car.output())
+
+// enumarable property to fasle
+Object.defineProperty(car,"brand",{ enumerable: false})
+// enumarable property
+for(let item in car) {
+    console.log(item)
+}
+console.log(Object.keys(car))
